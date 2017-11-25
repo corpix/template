@@ -29,12 +29,12 @@ func Parse(tpl string) (*Template, error) {
 		err error
 	)
 
-	t, err = template.New("").Parse(t)
+	t, err = template.New("").Parse(tpl)
 	if err != nil {
 		return nil, err
 	}
 
 	return &Template{
 		t: t,
-	}
+	}, nil
 }
